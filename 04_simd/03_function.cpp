@@ -1,4 +1,5 @@
 #include <cstdio>
+__attribute__((noinline))
 
 void add(float a, float b, float &c) {
   c = a + b;
