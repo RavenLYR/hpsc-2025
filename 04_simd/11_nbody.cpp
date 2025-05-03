@@ -30,8 +30,7 @@ int main() {
     
     __m512 rx = _mm512_sub_ps(xi, xj);
     __m512 ry = _mm512_sub_ps(yi, yj);
-    __m512 r2 = _mm512_add_ps(_mm512_mul_ps(rx, rx),
-                              _mm512_mul_ps(ry, ry));
+    __m512 r2 = _mm512_add_ps(_mm512_mul_ps(rx, rx),_mm512_mul_ps(ry, ry));
     __m512 rinv = _mm512_rsqrt14_ps(r2);
     __m512 rinv3 = _mm512_mul_ps(_mm512_mul_ps(rinv, rinv), rinv);
     
