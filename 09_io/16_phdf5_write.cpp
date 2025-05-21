@@ -17,7 +17,7 @@ int main (int argc, char** argv) {
   hsize_t Nlocal[2] = {NX/dim[0], NY/dim[1]};
   hsize_t block[2] = {Nlocal[0]/2, Nlocal[1]/2};
   hsize_t offset[2] = {mpirank / dim[0], mpirank % dim[1]};
-  for(int i=0; i<2; i++) offset[i] *= Nlocal[i];
+  for(int i=0; i<2; i++) offset[i] *= block[i];
   hsize_t count[2] = {2,2};
   hsize_t stride[2] = {block[0]*2, block[1]*2};
   vector<int> buffer(Nlocal[0]*Nlocal[1],mpirank);
